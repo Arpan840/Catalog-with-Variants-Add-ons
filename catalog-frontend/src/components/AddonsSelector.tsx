@@ -8,7 +8,6 @@ interface AddonsSelectorProps {
 
 const AddonsSelector: React.FC<AddonsSelectorProps> = ({ addons, onSelectionChange }) => {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
-  console.log("Available addons:", addons);
   
 
   useEffect(() => {

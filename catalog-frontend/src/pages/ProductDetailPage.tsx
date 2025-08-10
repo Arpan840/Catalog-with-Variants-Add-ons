@@ -9,7 +9,6 @@ const ProductDetailPage: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const product = location.state?.product as Product | undefined;
-  console.log("Product details:", product);
   
   const [mainImage, setMainImage] = useState<number>(0);
   const [selectedVariant, setSelectedVariant] = useState<Variant | null>(
@@ -95,15 +94,6 @@ const ProductDetailPage: React.FC = () => {
                   💰
                 </span>{" "}
                 <strong>Base Price:</strong> ${selectedVariant.price}
-              </p>
-              <p>
-                <span role="img" aria-label="addons">
-                  ➕
-                </span>{" "}
-                <strong>Add-ons Price:</strong> $
-                {selectedAddons
-                  .reduce((sum, addon) => sum + addon.price, 0)
-                  .toFixed(2)}
               </p>
               <p>
                 <span role="img" aria-label="total">
