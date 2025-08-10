@@ -9,7 +9,7 @@ const ProductDetailPage: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const product = location.state?.product as Product | undefined;
-  
+
   const [mainImage, setMainImage] = useState<number>(0);
   const [selectedVariant, setSelectedVariant] = useState<Variant | null>(
     product?.variants && product.variants.length > 0
@@ -39,9 +39,14 @@ const ProductDetailPage: React.FC = () => {
   };
 
   // Calculate total price = variant price + sum of addon prices
-  const totalPrice =
-    (selectedVariant?.price || 0) +
-    selectedAddons.reduce((sum, addon) => sum + addon.price, 0);
+  const variantPrice = Number(selectedVariant?.price) || 0;
+
+  const addonsTotal = selectedAddons.reduce(
+    (sum, addon) => sum + Number(addon.price),
+    0
+  );
+
+  const totalPrice = (variantPrice + addonsTotal).toFixed(2);
 
   return (
     <div className="product-detail-container">
@@ -80,7 +85,7 @@ const ProductDetailPage: React.FC = () => {
             onVariantChange={handleVariantChange}
           />
 
-          { product.addons && product.addons.length > 0 && (
+          {product.addons && product.addons.length > 0 && (
             <AddonsSelector
               addons={product.addons}
               onSelectionChange={handleAddonsChange}
