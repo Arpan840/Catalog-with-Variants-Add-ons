@@ -1,0 +1,65 @@
+.product-type-nav {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to wrap to next line on small screens */
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: flex-start; /* Left align; use center if you prefer */
+  overflow-x: auto; /* Allows horizontal scrolling on small screens */
+  padding-bottom: 6px;
+  scrollbar-width: thin;       /* For Firefox */
+  scrollbar-color: #ff6f61 #eee;
+}
+
+/* Style for nav buttons */
+.product-type-nav button {
+  flex: none;
+  padding: 0.65em 1.5em;
+  min-width: 90px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: background-color 0.3s, color 0.2s, box-shadow 0.2s;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(100,100,110,0.07);
+  outline: none;
+}
+
+.product-type-nav button.active,
+.product-type-nav button:hover {
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,123,255,0.12);
+}
+
+/* Make nav absolutely usable on smallest screens */
+@media (max-width: 600px) {
+  .product-type-nav {
+    gap: 6px;
+    padding-bottom: 8px;
+    /* Scroll horizontal if buttons overflow */
+    justify-content: flex-start;
+  }
+  .product-type-nav button {
+    padding: 0.6em 1.1em;
+    font-size: 0.97rem;
+    min-width: 72px;
+  }
+}
+
+/* For really small screens */
+@media (max-width: 420px) {
+  .product-type-nav {
+    gap: 4px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+  }
+  .product-type-nav button {
+    padding: 0.45em 0.8em;
+    font-size: 0.92rem;
+    min-width: 62px;
+    border-radius: 5px;
+  }
+}
