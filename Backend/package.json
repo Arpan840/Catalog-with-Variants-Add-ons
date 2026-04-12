@@ -13,9 +13,7 @@
   "@types/cors": "^2.8.19",
   "@types/express": "^5.0.3",
   "@types/node": "^24.0.1",
-  "dotenv": "^16.6.1",
   "eslint": "^9.29.0",
-  "express": "^5.1.0",
   "nodemon": "^3.1.10",
   "prettier": "^3.5.3",
   "ts-node": "^10.9.2",
@@ -25,6 +23,8 @@
  },
  "dependencies": {
   "cors": "^2.8.5",
+  "dotenv": "^16.6.1",
+  "express": "^5.1.0",
   "pg": "^8.16.3",
   "reflect-metadata": "^0.2.2",
   "typeorm": "^0.3.25"
