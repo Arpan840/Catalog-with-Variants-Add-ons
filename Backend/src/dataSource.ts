@@ -14,5 +14,5 @@ export const AppDataSource = new DataSource({
   entities: [__dirname + '/entities/**/*.{ts,js}'],
   migrations: process.env.ISDEV
     ? ['src/migrations/**/*.ts']
-    : ['dist/migrations/**/*.js'],
+     : ['dist/src/migrations/**/*.js'],
 });
